@@ -2,8 +2,10 @@ package com.focus.androidserver.business;
 
 import java.util.ArrayList;
 
+import com.focus.androidserver.dao.AnswerDAO;
 import com.focus.androidserver.dao.PatientDAO;
 import com.focus.androidserver.dao.UserDAO;
+import com.focus.androidserver.model.AnswerModel;
 import com.focus.androidserver.model.PatientModel;
 
 public class DatabaseService {
@@ -35,5 +37,11 @@ public class DatabaseService {
 		ArrayList<PatientModel> result = PatientDAO.getPatientIdAndAgeByUId(uid);
 		return result;
 	}
-	
+	public static void saveAnswer (AnswerModel answer){
+		AnswerDAO.saveAnswer(answer);
+	}
+
+	public static void updateAnswer(AnswerModel answerModel) {
+		AnswerDAO.updateAnswer(answerModel);
+	}
 }
